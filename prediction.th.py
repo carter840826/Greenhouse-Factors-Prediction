@@ -1,9 +1,11 @@
+## This code works with python
+
 import pandas as pd
 import numpy as np
 from sklearn import cross_validation, ensemble, preprocessing, metrics
 import matplotlib.pyplot as plt  
 
-#leading
+#Set leading time
 t = 48
 
 
