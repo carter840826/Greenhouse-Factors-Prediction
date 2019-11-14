@@ -17,7 +17,7 @@ test = pd.read_csv('prediction_480.csv', index_col = 0)
 test_X = pd.DataFrame([test['preds2'],test['pret'],test['preb']]).T
 test_y = test['avet']
 
-bag = ensemble.BaggingRegressor(n_estimators = 100)
+bag = ensemble.RandomForestRegressor(n_estimators = 100)
 bag_fit = bag.fit(train_X, train_y)
 
 
