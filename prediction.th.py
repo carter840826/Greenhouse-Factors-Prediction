@@ -15,12 +15,12 @@ train = pd.read_csv('out to in_train1.csv', index_col = 0)
 train_X = pd.DataFrame([train['avet'],train['aveb'],train['pret'],train['preb'],train['preaveth'],train['prepreaveth']]).T
 train_y = train['aveth']
 
-test = pd.read_csv('prediction_480.csv', index_col = 0)
+test = pd.read_csv('prediction_48.csv', index_col = 0)
 test_X = pd.DataFrame([test['temp_prediction'],test['preds2'],test['temp_preprediction'],test['prepreds2'],test['preaveth'],test['prepreaveth']]).T
 test_y = test['aveth']
 
 
-bag = ensemble.BaggingRegressor(n_estimators = 50)
+bag = ensemble.RandomForestRegressor(n_estimators = 100)
 bag_fit = bag.fit(train_X, train_y)
 
 
